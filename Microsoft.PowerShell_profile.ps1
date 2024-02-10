@@ -15,7 +15,7 @@
 
 #check for updates
 try{
-    $url = "https://raw.githubusercontent.com/ChrisTitusTech/powershell-profile/main/Microsoft.PowerShell_profile.ps1"
+    $url = "https://raw.githubusercontent.com/erkikal/powershell-profile/main/Microsoft.PowerShell_profile.ps1"
     $oldhash = Get-FileHash $PROFILE
     Invoke-RestMethod $url -OutFile "$env:temp/Microsoft.PowerShell_profile.ps1"
     $newhash = Get-FileHash "$env:temp/Microsoft.PowerShell_profile.ps1"
@@ -155,7 +155,7 @@ Set-Alias -Name vim -Value $EDITOR
 
 
 function ll { Get-ChildItem -Path $pwd -File }
-function g { Set-Location $HOME\Documents\Github }
+function g { Set-Location $HOME\Github }
 function gcom {
     git add .
     git commit -m "$args"
@@ -238,4 +238,4 @@ Invoke-Expression (& { (zoxide init powershell | Out-String) })
 
 
 ## Final Line to set prompt
-oh-my-posh init pwsh --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/cobalt2.omp.json | Invoke-Expression
+oh-my-posh init pwsh --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/catppuccin.omp.json| Invoke-Expression
