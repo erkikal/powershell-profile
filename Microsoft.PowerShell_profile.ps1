@@ -234,6 +234,8 @@ if (Test-Path($ChocolateyProfile)) {
     Import-Module "$ChocolateyProfile"
 }
 
+$ENV:STARSHIP_CONFIG = "$HOME\.config\starship\starship.toml"
+
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
 Invoke-Expression (&starship init powershell)
 
