@@ -14,7 +14,7 @@
 ### more information about execution policies, run Get-Help about_Execution_Policies.
 
 #check for updates
-try{
+try {
     $url = "https://raw.githubusercontent.com/erkikal/powershell-profile/main/Microsoft.PowerShell_profile.ps1"
     $oldhash = Get-FileHash $PROFILE
     Invoke-RestMethod $url -OutFile "$env:temp/Microsoft.PowerShell_profile.ps1"
